@@ -34,7 +34,7 @@ def getuid(ev):
     for event in cal.walk("VEVENT"):
         uids = event["UID"]
         out = []
-        for k in re.finditer("\([^()]*\)", uids):
+        for k in re.finditer(r"\([^()]*\)", uids):
             out.append(k.group(0)[4:-3])
 
         return out
